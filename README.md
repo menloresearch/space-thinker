@@ -87,14 +87,14 @@ We're looking for collaborators and plan to expand the model's capabilities to i
 ## References
 
 ```bibtex
-@misc{dao2025alphamazeenhancinglargelanguage,
-      title={AlphaMaze: Enhancing Large Language Models' Spatial Intelligence via GRPO}, 
-      author={Alan Dao and Dinh Bach Vu},
+@misc{dao2025alphaspaceenablingroboticactions,
+      title={AlphaSpace: Enabling Robotic Actions through Semantic Tokenization and Symbolic Reasoning}, 
+      author={Alan Dao and Dinh Bach Vu and Bui Quang Huy},
       year={2025},
-      eprint={2502.14669},
+      eprint={2503.18769},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2502.14669}, 
+      url={https://arxiv.org/abs/2503.18769}, 
 }
 ```
 
