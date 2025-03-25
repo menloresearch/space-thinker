@@ -10,7 +10,7 @@ AlphaSpace lets language models understand and manipulate objects in 3D space wi
 
 Traditional robots need computer vision to see objects. We've created a different approach: structured tokens that encode spatial information, allowing language models to reason about position, orientation, and physical relationships between objects.
 
-### How it works
+#### 🤔 How it Works:  A Token-Based Approach
 
 AlphaSpace uses a hierarchical position-based token system:
 1. **Global position tokens**: Represent a 25x25 grid (`<|row-col|>`, e.g., `<|5-10|>`)
@@ -19,7 +19,7 @@ AlphaSpace uses a hierarchical position-based token system:
 4. **State tokens**: Special indicators like `<|empty|>`, `<|origin|>`, and `<|target|>`
 
 Our specialized training teaches models to manipulate these tokens to solve spatial problems.
-### Why it matters
+#### 🔥 Why it matters
 
 - **No cameras needed**: Pure language-based spatial reasoning
 - **Precise manipulation**: Robots can position objects at exact coordinates
