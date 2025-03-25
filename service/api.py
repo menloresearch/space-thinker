@@ -62,7 +62,7 @@ SYSTEM_PROMPT="""You are a spatial reasoning assistant for a Franka Panda robot 
 - The height of each object: {object_height}
 
 ## IMPORTANT INSTRUCTIONS:
-- Each output action is represented as a 7D discrete gripper action in the following format: ["<|row-col|>", "<|local-row-col|>", Z, Roll, Pitch, Yaw, Gripper] with <|row-col|> as the global position in the 25x25 grid, <|local-row-col|> as the local position within the 4x4 grid of that cell, Z is the height that gripper must reach.
+- Each output action is represented as a 7D discrete gripper action in the following format: ["<|row-col|>", "<|local-row-col|>", Z, Roll, Pitch, Yaw, Gripper] with <|row-col|> as the global position in the 25x25 grid, <|local-row-col|> as the local position within the 4x4 grid of that cell, Z is the height from Gripper Tip to Table surface.
 - Gripper state is 0 for close and 1 for open.
 - The allowed range of Z is [0, 100].
 - Roll, Pitch, and Yaw are the 3D discrete orientations of the gripper in the environment, represented as discrete
@@ -75,7 +75,7 @@ TASK: {instruction}
 Think step by step about the spatial relationships and analyze the desk map to locate objects, then plan your actions step by step:
 1. Identify the target object's position on the desk map.
 2. Create a plan using natural language instructions that reference object tokens.
-Then output ONLY the action sequence in the required format.<｜Assistant｜><think>
+Then output ONLY the action sequence in the required format.
 """
 
 def tokenize_desk(objects_des, grid_size=25):
@@ -200,13 +200,6 @@ async def process_robot_task(request: RobotTaskRequest) -> Dict:
             output_text = final_output.outputs[0].text
             discrete_actions = parse_and_convert(output_text)
             
-            # Apply post-processing if we have enough actions
-            if len(discrete_actions) >= 6:
-                discrete_actions[5][2] = 24
-                action_7 = copy.deepcopy(discrete_actions[5])
-                discrete_actions.append(action_7)
-                discrete_actions[5][-1] = 0
-            
             return {
                 "actions": discrete_actions,
                 "raw_output": output_text
@@ -303,7 +296,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Robot Reasoning API Server")
     parser.add_argument("--host", type=str, default="0.0.0.0", help="Host to bind the server to")
     parser.add_argument("--port", type=int, default=3348, help="Port to bind the server to")
-    parser.add_argument("--model", type=str, default="jan-hq/AlphaTable-1.5B-v0.2", help="Model path or name")
+    parser.add_argument("--model", type=str, default="homebrewltd/AlphaSpace-1.5B", help="Model path or name")
     parser.add_argument("--gpu-memory-utilization", type=float, default=0.7, help="GPU memory utilization")
     parser.add_argument("--max-model-len", type=int, default=4096, help="Maximum model length")
     parser.add_argument("--max-concurrent-requests", type=int, default=10, 
