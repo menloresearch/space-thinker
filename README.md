@@ -84,6 +84,24 @@ We're working on:
 
 We're looking for collaborators and plan to expand the model's capabilities to include additional spatial tasks in the future! Check out the [issues](https://github.com/menloresearch/space-thinker) to get started.
 
+## References
+
+```bibtex
+@misc{dao2025alphamazeenhancinglargelanguage,
+      title={AlphaMaze: Enhancing Large Language Models' Spatial Intelligence via GRPO}, 
+      author={Alan Dao and Dinh Bach Vu},
+      year={2025},
+      eprint={2502.14669},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2502.14669}, 
+}
+```
+
+## Acknowledgement
+
+- [llama-factory](https://github.com/hiyouga/LLaMA-Factory)
+- [Deepseek](https://github.com/deepseek-ai/DeepSeek-R1)
 ---
 
 *AlphaSpace was created by [Menlo Reseach](https://www.menlo.ai/). If you use it in your research, please cite our [paper](https://arxiv.org/abs/2503.18769).*
