@@ -82,7 +82,7 @@ We're working on:
 
 ## Join us
 
-We're looking for collaborators and plan to expand the model's capabilities to include additional spatial tasks in the future! Check out the [issues](https://github.com/menloresearch/space-thinker) to get started.
+We're looking for collaborators and plan to expand the model's capabilities to include additional spatial tasks in the future! Check out the [issues](https://github.com/menloresearch/space-thinker/issues) to get started.
 
 ## References
 
